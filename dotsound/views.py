@@ -75,7 +75,7 @@ def index():
         mp3 = MP3(music_dir+files)
 
         track = ' '#u' '.join(mp3['TRCK'].text).encode('utf-8')
-        title = u' '.join(mp3['TIT2'].text).encode('utf-8')
+        title = file#u' '.join(mp3['TIT2'].text).encode('utf-8')
         artist = ' '#u' '.join(mp3['TPE1'].text).encode('utf-8')
         album = ' '#.join(mp3['TALB'].text).encode('utf-8')
         length = track_length(mp3.info.length)
