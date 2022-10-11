@@ -87,7 +87,7 @@ def index():
         songs['album'].append(album)
         songs['length'].append(length)
         songs['url'].append(url)
-        songs_tuple.append((nr_format(track),
+        songs_tuple.append((track,
                             title,
                             artist,
                             album,
