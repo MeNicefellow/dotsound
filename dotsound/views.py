@@ -74,26 +74,25 @@ def index():
     for files in mp3_list:
         mp3 = MP3(music_dir+files)
 
-        if 'TALB' in mp3:
-            track = u' '.join(mp3['TRCK'].text).encode('utf-8')
-            title = u' '.join(mp3['TIT2'].text).encode('utf-8')
-            artist = u' '.join(mp3['TPE1'].text).encode('utf-8')
-            album = u' '.join(mp3['TALB'].text).encode('utf-8')
-            length = track_length(mp3.info.length)
-            url = 'static/music/'+files
+        track = u' '.join(mp3['TRCK'].text).encode('utf-8')
+        title = u' '.join(mp3['TIT2'].text).encode('utf-8')
+        artist = u' '.join(mp3['TPE1'].text).encode('utf-8')
+        album = ' '#.join(mp3['TALB'].text).encode('utf-8')
+        length = track_length(mp3.info.length)
+        url = 'static/music/'+files
 
-            songs['track'].append(nr_format(track))
-            songs['title'].append(title)
-            songs['artist'].append(artist)
-            songs['album'].append(album)
-            songs['length'].append(length)
-            songs['url'].append(url)
-            songs_tuple.append((nr_format(track),
-                                title,
-                                artist,
-                                album,
-                                length,
-                                url))
+        songs['track'].append(nr_format(track))
+        songs['title'].append(title)
+        songs['artist'].append(artist)
+        songs['album'].append(album)
+        songs['length'].append(length)
+        songs['url'].append(url)
+        songs_tuple.append((nr_format(track),
+                            title,
+                            artist,
+                            album,
+                            length,
+                            url))
 
     songs_tuple.sort(key=itemgetter(2, 3, 0))
 
