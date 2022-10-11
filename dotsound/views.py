@@ -74,10 +74,10 @@ def index():
     for files in mp3_list:
         mp3 = MP3(music_dir+files)
 
-        track = 'track'.encode('utf-8')#u' '.join(mp3['TRCK'].text).encode('utf-8')
+        track = u'track'.encode('utf-8')#u' '.join(mp3['TRCK'].text).encode('utf-8')
         title = files.encode('utf-8')#u' '.join(mp3['TIT2'].text).encode('utf-8')
-        artist = ' '.encode('utf-8')#u' '.join(mp3['TPE1'].text).encode('utf-8')
-        album = ' '.encode('utf-8')#.join(mp3['TALB'].text).encode('utf-8')
+        artist = u' '.encode('utf-8')#u' '.join(mp3['TPE1'].text).encode('utf-8')
+        album = u' '.encode('utf-8')#.join(mp3['TALB'].text).encode('utf-8')
         length = track_length(mp3.info.length)
         url = 'static/music/'+files
 
